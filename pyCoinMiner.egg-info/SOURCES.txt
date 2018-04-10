@@ -1,0 +1,7 @@
+setup.py
+pyCoinMiner.egg-info/PKG-INFO
+pyCoinMiner.egg-info/SOURCES.txt
+pyCoinMiner.egg-info/dependency_links.txt
+pyCoinMiner.egg-info/top_level.txt
+test/__init__.py
+test/testObjectBlock.py

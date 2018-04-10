@@ -1,11 +1,11 @@
 import unittest
-import block
+from block import Block, get_timestamp, check_target, mine
 
 
 class TestObjectBlock(unittest.TestCase):
     def setUp(self):
         l = [{'de': 'minerador', 'para': 'alguem', 'valor': '2.00'}]
-        self.block = block.Block(blocknumber=1,
+        self.block = Block(blocknumber=1,
                                  version='1.0',
                                  difficulty=2,
                                  timestamp='1523354307.041694',
@@ -22,16 +22,16 @@ class TestObjectBlock(unittest.TestCase):
         self.assertEqual(self.block.hashHeaderBlock, '0c5f1c48651a310e2f0d3630e5dc63af1cbd9c0bea5009376ee15ece109f024e')
 
     def testGetTimestamp(self):
-        self.assertIsNotNone(block.get_timestamp())
+        self.assertIsNotNone(get_timestamp())
 
     def testCheckTargetIsTrue(self):
-        self.assertTrue(block.check_target(2, '004c54bc6074720495782a8f0d9eb11bd6dff93617f5b07cd7ad7a92d0afdc72'))
+        self.assertTrue(check_target(2, '004c54bc6074720495782a8f0d9eb11bd6dff93617f5b07cd7ad7a92d0afdc72'))
 
     def testCheckTargetNotTrue(self):
-        self.assertFalse(block.check_target(2, '114c54bc6074720495782a8f0d9eb11bd6dff93617f5b07cd7ad7a92d0afdc72'))
+        self.assertFalse(check_target(2, '114c54bc6074720495782a8f0d9eb11bd6dff93617f5b07cd7ad7a92d0afdc72'))
 
     def testMine(self):
-        self.assertTrue(block.mine(self.block))
+        self.assertTrue(mine(self.block))
 
 
 if __name__ == '__main__':
