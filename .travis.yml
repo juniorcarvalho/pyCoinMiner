@@ -1,0 +1,9 @@
+language: python
+
+python:
+  - "3.6.4"
+
+sudo: required
+
+script:
+  - python setup.py test
