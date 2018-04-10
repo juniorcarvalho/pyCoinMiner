@@ -23,7 +23,7 @@ def main():
                    transaction=transactions,
                    hashpreviousblock=block0.hashHeaderBlock)
     mine(block1)
-    print('Bloco 1 minerado - nonce: '+str(block1.nonce))
+    print('Bloco 1 minerado - nonce: ' + str(block1.nonce))
 
 
 if __name__ == '__main__':

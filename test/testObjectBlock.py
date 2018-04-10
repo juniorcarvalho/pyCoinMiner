@@ -6,11 +6,11 @@ class TestObjectBlock(unittest.TestCase):
     def setUp(self):
         l = [{'de': 'minerador', 'para': 'alguem', 'valor': '2.00'}]
         self.block = Block(blocknumber=1,
-                                 version='1.0',
-                                 difficulty=2,
-                                 timestamp='1523354307.041694',
-                                 hashpreviousblock='0' * 64,
-                                 transaction=l)
+                           version='1.0',
+                           difficulty=2,
+                           timestamp='1523354307.041694',
+                           hashpreviousblock='0' * 64,
+                           transaction=l)
 
     def testCountTransaction(self):
         self.assertEqual(len(self.block.transaction), 2)
