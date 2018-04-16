@@ -49,7 +49,9 @@ def get_timestamp():
 
 
 def mine(block):
-    """mining process"""
+    """mining process
+        :param Block block: block to mine
+    """
     ok = False
     i = 0
     while ok is not True:
@@ -62,5 +64,10 @@ def mine(block):
 
 
 def check_target(difficulty, hash):
-    """checks whether hash contains a certain number of zeros at the beginning"""
+    """checks whether hash contains a certain number of zeros at the beginning
+        params:
+        :param int difficulty: difficulty applied
+        :param str hash: hash to test
+        :return bol
+    """
     return hash[:difficulty] == ('0' * difficulty)
