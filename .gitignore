@@ -1,4 +1,6 @@
 *pyc
 __pycache__
 .idea
+.env
+.ipynb_checkpoints
 pyCoinMiner.egg-info

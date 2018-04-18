@@ -30,15 +30,12 @@ class Block(object):
             for v in l.values():
                 temp += v
 
-        h = hashlib.sha256()
-        h.update(temp.encode())
-        self.hashTransaction = h.hexdigest()
+        self.hashTransaction = hashlib.sha256(temp.encode()).hexdigest()
 
-        h = hashlib.sha256()
         temp = (self.version + self.hashPreviousBlock + self.hashTransaction +
                 str(self.timestamp) + str(self.difficulty) + str(self.nonce))
-        h.update(temp.encode())
-        self.hashHeaderBlock = h.hexdigest()
+
+        self.hashHeaderBlock = hashlib.sha256(temp.encode()).hexdigest()
 
 
 def get_timestamp():
@@ -51,6 +48,7 @@ def get_timestamp():
 def mine(block):
     """mining process
         :param Block block: block to mine
+        :return bol
     """
     ok = False
     i = 0
